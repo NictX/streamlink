@@ -120,11 +120,13 @@ class StreamRunner:
             write(prebuffer)
             progress(prebuffer)
             del prebuffer
-
+            data_len = 0
             # Don't check for stream.closed, so the buffer's contents can be fully read after the stream ended or was closed
             while True:
                 try:
                     data = read(chunk_size)
+                    data_len+=len(data)
+                    print(data_len)
                     if data == b"":
                         break
                 except OSError as err:
