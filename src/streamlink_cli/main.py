@@ -350,6 +350,7 @@ def output_stream(stream, formatter: Formatter):
         try:
             stream_fd, prebuffer = open_stream(stream)
             success_open = True
+            log.info("Stream opened")
             break
         except StreamError as err:
             log.error(f"Try {i + 1}/{args.retry_open}: Could not open stream {stream} ({err})")
@@ -358,6 +359,7 @@ def output_stream(stream, formatter: Formatter):
         return console.exit(f"Could not open stream {stream}, tried {args.retry_open} times, exiting")
 
     try:
+        log.info("File opened")
         output.open()
     except OSError as err:
         if isinstance(output, PlayerOutput):
