@@ -342,7 +342,7 @@ def open_stream(stream):
 def output_stream(stream, formatter: Formatter):
     """Open stream, create output and finally write the stream to output."""
     global output
-    log.info(formatter.__dir__)
+    log.info(formatter.__dir__())
     # create output before opening the stream, so file outputs can prompt on existing output
     output = FileOutput(filename=Path(os.path.realpath(formatter.path(f"check0.ts", None))))
 
