@@ -104,15 +104,19 @@ def create_output(formatter: Formatter) -> Union[FileOutput, PlayerOutput]:
 
     if args.output:
         if args.output == "-":
+            log.info("N1")
             return FileOutput(fd=stdout)
         else:
+            log.info("N2")
             return check_file_output(formatter.path(args.output, args.fs_safe_rules), args.force)
 
     elif args.stdout:
+        log.info("N3")
         return FileOutput(fd=stdout)
 
     elif args.record_and_pipe:
         record = check_file_output(formatter.path(args.record_and_pipe, args.fs_safe_rules), args.force)
+        log.info("N4")
         return FileOutput(fd=stdout, record=record)
 
     elif not args.player:
@@ -144,6 +148,7 @@ def create_output(formatter: Formatter) -> Union[FileOutput, PlayerOutput]:
 
         log.info(f"Starting player: {args.player}")
 
+        log.info("N5")
         return PlayerOutput(
             path=args.player,
             args=args.player_args,
