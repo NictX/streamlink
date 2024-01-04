@@ -569,7 +569,7 @@ def handle_url():
         for stream_name in args.stream:
             if stream_name in streams:
                 log.info(f"Available streams: {validstreams}")
-                log.info(f"Test")
+                print(f"Test")
 
                 handle_stream(plugin, streams, stream_name)
                 return
