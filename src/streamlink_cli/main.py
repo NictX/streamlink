@@ -344,9 +344,9 @@ def output_stream(stream, formatter: Formatter, plugin: Plugin):
     global output
     log.info(formatter.__dir__())
     log.info(f"streamer - {formatter.mapping['author']()}")
-    log.info(f"stream id - {plugin.get_id()}")
-    log.info(f"stream title - {plugin.get_title()}")
-    log.info(f"stream category - {plugin.get_category()}")
+    log.info(f"stream id - {formatter.mapping['id']())
+    log.info(f"stream title - {formatter.mapping['title']())
+    log.info(f"stream category - {formatter.mapping['game']())
 
     
     # create output before opening the stream, so file outputs can prompt on existing output
