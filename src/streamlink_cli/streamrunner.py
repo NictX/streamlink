@@ -123,13 +123,15 @@ class StreamRunner:
             progress(prebuffer)
             del prebuffer
             data_len = 0
+            n=0
             # Don't check for stream.closed, so the buffer's contents can be fully read after the stream ended or was closed
             while True:
                 try:
                     data = read(chunk_size)
                     data_len+=len(data)
                     if data_len>=52428800:
-                        print("New file must be created")
+                        n+=1
+                        print(f"New file must be created, part - {n}")
                         data_len=0
                         # self.output = FileOutput(filename="/home/nict/check.ts")
                         # self.output.open()
