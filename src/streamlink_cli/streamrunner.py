@@ -94,10 +94,10 @@ class StreamRunner:
         elif isinstance(output, FileOutput):
             if output.filename:
                 filename = output.filename
-                print("[output.filename] Filename: ")
+                print(f"[output.filename] Filename: {filename}")
             elif output.record:
-                print("[utput.record.filename] Filename: ")
                 filename = output.record.filename
+                print(f"[output.record.filename] Filename: {filename}")
 
         if filename and show_progress:
             self.progress = Progress(sys.stderr, filename)
