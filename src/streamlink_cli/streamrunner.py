@@ -104,8 +104,8 @@ class StreamRunner:
 
     def run(
         self,
-        prebuffer: bytes,
         formatter: Formatter,
+        prebuffer: bytes,
         chunk_size: int = 8192,
     ) -> None:
         read = self.stream.read
