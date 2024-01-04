@@ -343,10 +343,10 @@ def output_stream(stream, formatter: Formatter, plugin: Plugin):
     """Open stream, create output and finally write the stream to output."""
     global output
     log.info(formatter.__dir__())
-    log.info(f"streamer - {plugin.get_author}")
-    log.info(f"stream id - {plugin.get_id}")
-    log.info(f"stream title - {plugin.get_title}")
-    log.info(f"stream category - {plugin.get_category}")
+    log.info(f"streamer - {plugin.get_author()}")
+    log.info(f"stream id - {plugin.get_id()}")
+    log.info(f"stream title - {plugin.get_title()}")
+    log.info(f"stream category - {plugin.get_category()}")
 
     
     # create output before opening the stream, so file outputs can prompt on existing output
