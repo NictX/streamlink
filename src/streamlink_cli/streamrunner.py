@@ -128,7 +128,7 @@ class StreamRunner:
                 try:
                     data = read(chunk_size)
                     data_len+=len(data)
-                    if data_len>=2097152000:
+                    if data_len>=52428800:
                         print("New file must be created")
                         data_len=0
                         # self.output = FileOutput(filename="/home/nict/check.ts")
