@@ -133,6 +133,7 @@ class StreamRunner:
                         n+=1
                         print(f"New file must be created, part - {n}")
                         data_len=0
+                        self.output.close()
                         self.output = FileOutput(filename=f"/home/nict/check{n}.ts")
                         self.output.open()
                         write = self.output.write
