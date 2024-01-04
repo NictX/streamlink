@@ -83,7 +83,7 @@ def check_file_output(path: Path, force: bool) -> FileOutput:
         else:
             log.error(f"File {path} already exists, use --force to overwrite it.")
             sys.exit()
-    log.info("realpath")
+    log.info(realpath)
     return FileOutput(filename=realpath)
 
 
