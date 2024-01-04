@@ -94,7 +94,9 @@ class StreamRunner:
         elif isinstance(output, FileOutput):
             if output.filename:
                 filename = output.filename
+                print("[output.filename] Filename: ")
             elif output.record:
+                print("[utput.record.filename] Filename: ")
                 filename = output.record.filename
 
         if filename and show_progress:
@@ -126,7 +128,10 @@ class StreamRunner:
                 try:
                     data = read(chunk_size)
                     data_len+=len(data)
-                    print(data_len)
+                    if data_len>=2097152000:
+                        print("New file must be created")
+                        self.output = FileOutput(filename="check.ts")
+                        self.output.open()
                     if data == b"":
                         break
                 except OSError as err:

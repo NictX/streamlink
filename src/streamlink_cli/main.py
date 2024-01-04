@@ -421,7 +421,7 @@ def handle_stream(plugin: Plugin, streams: Dict[str, Stream], stream_name: str) 
         file_output = args.output or args.stdout
 
         formatter = get_formatter(plugin)
-
+        log.info(f"Test")
         for name in [stream_name, *alt_streams]:
             stream = streams[name]
             stream_type = type(stream).shortname()
