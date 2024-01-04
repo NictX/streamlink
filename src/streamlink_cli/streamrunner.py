@@ -78,10 +78,8 @@ class StreamRunner:
         self,
         stream: StreamIO,
         output: Output,
-        formatter: Formatter,
         show_progress: bool = False,
     ):
-        self.formatter = formatter
         self.stream = stream
         self.output = output
         self.is_http = isinstance(output, HTTPOutput)
@@ -107,6 +105,7 @@ class StreamRunner:
     def run(
         self,
         prebuffer: bytes,
+        formatter: Formatter,
         chunk_size: int = 8192,
     ) -> None:
         read = self.stream.read
