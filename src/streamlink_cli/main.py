@@ -396,7 +396,7 @@ def handle_stream(plugin: Plugin, streams: Dict[str, Stream], stream_name: str) 
      - Output stream data to selected output
 
     """
-
+    log.info(f"Test 55")
     stream_name = resolve_stream_name(streams, stream_name)
     stream = streams[stream_name]
     log.info("Test 2")
@@ -570,9 +570,10 @@ def handle_url():
         for stream_name in args.stream:
             if stream_name in streams:
                 log.info(f"Available streams: {validstreams}")
-                log.info(f"Test")
+                log.info(f"Test 1")
 
                 handle_stream(plugin, streams, stream_name)
+                log.info(f"Test 3")
                 return
 
         errmsg = f"The specified stream(s) '{', '.join(args.stream)}' could not be found"
