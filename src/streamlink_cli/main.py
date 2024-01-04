@@ -426,6 +426,7 @@ def handle_stream(plugin: Plugin, streams: Dict[str, Stream], stream_name: str) 
             stream_type = type(stream).shortname()
 
             if stream_type in args.player_passthrough and not file_output:
+                log.info("Test 2")
                 log.info(f"Opening stream: {name} ({stream_type})")
                 success = output_stream_passthrough(stream, formatter)
             elif args.player_external_http:
