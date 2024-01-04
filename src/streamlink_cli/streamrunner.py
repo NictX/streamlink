@@ -78,6 +78,7 @@ class StreamRunner:
         self,
         stream: StreamIO,
         output: Output,
+        formatter: Formatter,
         show_progress: bool = False,
     ):
         self.stream = stream
