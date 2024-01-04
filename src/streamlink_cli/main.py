@@ -372,7 +372,7 @@ def output_stream(stream, formatter: Formatter):
 
     try:
         with closing(output):
-            log.debug("Writing stream to output")
+            log.info("Writing stream to output")
             show_progress = args.progress == "force" or args.progress == "yes" and sys.stderr.isatty()
             if args.force_progress:
                 show_progress = True
@@ -383,6 +383,7 @@ def output_stream(stream, formatter: Formatter):
                 )
             # TODO: finally clean up the global variable mess and refactor the streamlink_cli package
             # noinspection PyUnboundLocalVariable
+            log.info("StreamRunner start")
             stream_runner = StreamRunner(stream_fd, output, show_progress=show_progress)
             # noinspection PyUnboundLocalVariable
             stream_runner.run(prebuffer)
