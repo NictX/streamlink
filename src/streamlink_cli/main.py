@@ -343,7 +343,12 @@ def output_stream(stream, formatter: Formatter):
     """Open stream, create output and finally write the stream to output."""
     global output
     log.info(formatter.__dir__())
-    log.info(formatter.mapping)
+    log.info(formatter.mapping['author'].__dir__())
+    log.info(formatter.mapping['id'].__dir__())
+    log.info(formatter.mapping['title'].__dir__())
+    log.info(formatter.mapping['time'].__dir__())
+    log.info(formatter.mapping['category'].__dir__())
+    
     log.info(formatter.formatting)
     log.info(formatter.cache)
     log.info(formatter.title)
