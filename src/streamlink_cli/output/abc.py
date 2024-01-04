@@ -11,6 +11,7 @@ class Output(metaclass=ABCMeta):
 
     def close(self):
         if self.opened:
+            print("File closed")
             self._close()
 
         self.opened = False
