@@ -343,7 +343,7 @@ def output_stream(stream, formatter: Formatter):
     global output
 
     # create output before opening the stream, so file outputs can prompt on existing output
-    output = create_output(formatter)
+    output = create_output(formatter) #replace with FileOutput(filename=realpath) realpath - full path to file
 
     success_open = False
     for i in range(args.retry_open):
