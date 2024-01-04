@@ -108,7 +108,7 @@ def create_output(formatter: Formatter) -> Union[FileOutput, PlayerOutput]:
             return FileOutput(fd=stdout)
         else:
             log.info("N2")
-            log.info(f"{args.fs_safe_rules} {typeof(args.fs_safe_rules)}")
+            log.info(f"{args.fs_safe_rules} {type(args.fs_safe_rules)}")
             return check_file_output(formatter.path(args.output, args.fs_safe_rules), args.force)
 
     elif args.stdout:
