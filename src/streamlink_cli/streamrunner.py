@@ -130,9 +130,10 @@ class StreamRunner:
                     data_len+=len(data)
                     if data_len>=2097152000:
                         print("New file must be created")
-                        self.output = FileOutput(filename="/home/nict/check.ts")
-                        self.output.open()
-                        write = self.output.write
+                        data_len=0
+                        # self.output = FileOutput(filename="/home/nict/check.ts")
+                        # self.output.open()
+                        # write = self.output.write
                     if data == b"":
                         break
                 except OSError as err:
