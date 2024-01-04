@@ -9,7 +9,7 @@ import os
 from streamlink.stream.stream import StreamIO
 from streamlink_cli.output import FileOutput, HTTPOutput, Output, PlayerOutput
 from streamlink_cli.utils.progress import Progress
-
+from streamlink_cli.utils import Formatter
 
 # Use the main Streamlink CLI module as logger
 log = logging.getLogger("streamlink.cli")
@@ -134,7 +134,7 @@ class StreamRunner:
                         print(f"New file must be created, part - {n}")
                         data_len=0
                         self.output.close()
-                        self.output = FileOutput(filename=Path(os.path.realpath(formatter.path(f"check{n}.ts", None))))
+                        self.output = FileOutput(filename=Path(os.path.realpath(Formatter.path(f"check{n}.ts", None))))
                         self.output.open()
                         write = self.output.write
                     if data == b"":
