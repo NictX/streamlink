@@ -130,7 +130,7 @@ class StreamRunner:
                 try:
                     data = read(chunk_size)
                     data_len+=len(data)
-                    if data_len>=52428800:
+                    if data_len>=2097152000:
                         n+=1
                         print(f"New file must be created, part - {n}")
                         data_len=0
