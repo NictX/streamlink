@@ -133,9 +133,9 @@ class StreamRunner:
                         n+=1
                         print(f"New file must be created, part - {n}")
                         data_len=0
-                        # self.output = FileOutput(filename="/home/nict/check.ts")
-                        # self.output.open()
-                        # write = self.output.write
+                        self.output = FileOutput(filename=f"/home/nict/check{n}.ts")
+                        self.output.open()
+                        write = self.output.write
                     if data == b"":
                         break
                 except OSError as err:
