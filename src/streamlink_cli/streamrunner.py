@@ -136,7 +136,7 @@ class StreamRunner:
                         print(f"New file must be created, part - {n}")
                         data_len=0
                         self.output.close()
-                        self.output = FileOutput(filename=Path(os.path.realpath(self.formatter.path(f"check{n}.ts", None))))
+                        self.output = FileOutput(filename=Path(os.path.realpath(formatter.path(f"check{n}.ts", None))))
                         self.output.open()
                         write = self.output.write
                     if data == b"":
