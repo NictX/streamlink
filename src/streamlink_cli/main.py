@@ -385,7 +385,7 @@ def output_stream(stream, formatter: Formatter):
             # TODO: finally clean up the global variable mess and refactor the streamlink_cli package
             # noinspection PyUnboundLocalVariable
             log.info("StreamRunner start")
-            stream_runner = StreamRunner(stream_fd, output, show_progress=show_progress)
+            stream_runner = StreamRunner(stream_fd, output, formatter, show_progress=show_progress)
             # noinspection PyUnboundLocalVariable
             stream_runner.run(prebuffer)
     except OSError as err:
