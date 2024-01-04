@@ -399,7 +399,7 @@ def handle_stream(plugin: Plugin, streams: Dict[str, Stream], stream_name: str) 
 
     stream_name = resolve_stream_name(streams, stream_name)
     stream = streams[stream_name]
-
+    log.info("Test 2")
     # Print JSON representation of the stream
     if args.json:
         console.msg_json(
