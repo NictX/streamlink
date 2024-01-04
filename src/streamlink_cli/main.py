@@ -339,7 +339,7 @@ def open_stream(stream):
     return stream_fd, prebuffer
 
 
-def output_stream(stream, formatter: Formatter):
+def output_stream(stream, formatter: Formatter, plugin: Plugin):
     """Open stream, create output and finally write the stream to output."""
     global output
     log.info(formatter.__dir__())
@@ -462,7 +462,7 @@ def handle_stream(plugin: Plugin, streams: Dict[str, Stream], stream_name: str) 
                 log.info("output_stream(stream, formatter)")
                 
                 log.info(f"Opening stream: {name} ({stream_type})")
-                success = output_stream(stream, formatter)
+                success = output_stream(stream, formatter, plugin)
 
             if success:
                 break
